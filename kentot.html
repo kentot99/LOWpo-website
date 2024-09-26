@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message for My Crush</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: navy;
+            color: yellow;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            cursor: pointer;
+        }
+        .message {
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="message" id="message">click the screen when you're ready napo ^^</div>
+
+    <script>
+        const messages = [
+            "hi",
+            "ikaw ba si sunset?",
+            "syempre, para sayo lang naman to eh",
+            "i mean sayo ko lang naman sinend tong link",
+            "sorry nag error yung kanina, kaya natagalan hehe",
+            "sabi ko dba wait moko till 10:13pm? kse HAHA nag error ung gawa kong isa",
+            "kita mo ung backround? ano kolay?",
+            "navy blue yan, moka lang dark blo",
+            "actually color palang alam ko sayo eh, sury",
+            "alam mo ba? something telling me na I WANT MORE ganun:(",
+            "something telling me na I WANT MORE ganun:(",
+            "in-short, gusto ko ituloy ung ano, chapter nateng dalawa HUII HAHHAHAH",
+            "ok lang if ayaw mo pa.. (d talaga)",
+            "ano mo nalang ako ahhhh friends with beneflirts ganon HAHAHAH",
+            "ayun lang if papayag ka^^",
+            "kung hindi? isasako nalang kita",
+            "kseee, no doubt i think ano na fall nanaman ako sayo,again",
+            "oh, bka paabutin mo pa ng 5x ha",
+            "pero ok lng den, pra may thrill",
+            "oo, un nalang FRIENDS WITH BENEFLIRTS",
+            "HAHHAHAHA, wla lang mwa",
+            "typo lang yung MWAAA",
+            "de.. this time kse sure nako",
+            "gusto ko ako lang(grabeh ket ako d ko kinakaya ang aking angas)",
+            "kaya ko lang naman gusto sumama sa EK, kse ayun nga gusto kita ksama",
+            "bka kinikilig kna dyan ah",
+            "oh eto, ipis kaba?",
+            "ksee...",
+            "ipis din ako, RAWR"
+
+
+
+
+
+        ];
+
+        let currentMessageIndex = 0;
+        const messageElement = document.getElementById('message');
+
+        function showMessage() {
+            messageElement.classList.remove('visible');
+            setTimeout(() => {
+                messageElement.textContent = messages[currentMessageIndex];
+                messageElement.classList.add('visible');
+                currentMessageIndex++;
+                if (currentMessageIndex < messages.length) {
+                    setTimeout(showMessage, 4000);
+                }
+            }, 1000);
+        }
+
+        document.body.addEventListener('click', () => {
+            messageElement.classList.remove('visible');
+            setTimeout(() => {
+                messageElement.textContent = messages[currentMessageIndex];
+                messageElement.classList.add('visible');
+                currentMessageIndex++;
+                if (currentMessageIndex < messages.length) {
+                    setTimeout(showMessage, 4000);
+                }
+            }, 1000);
+        }, { once: true });
+    </script>
+</body>
+</html>
